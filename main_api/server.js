@@ -30,6 +30,9 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', service: 'main_api', message: 'Express Core API is running blazingly fast!' });
 });
 
+import onboardingRoutes from './routes/onboarding.js';
+app.use('/api/onboarding', onboardingRoutes);
+
 app.listen(PORT, () => {
   console.log(`Core Express API running on http://localhost:${PORT}`);
 });

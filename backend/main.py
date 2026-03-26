@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import time
 from fastapi import Request
+from pydantic import BaseModel
+import os
+import json
+from openai import OpenAI
 
 app = FastAPI(
     title="AI Digital Marketing Agent Platform",
@@ -31,6 +35,60 @@ async def add_process_time_header(request: Request, call_next):
 @app.get("/api/health")
 async def health_check():
     return {"status": "ok", "message": "Backend is online and operating efficiently."}
+
+class OnboardingData(BaseModel):
+    businessName: str
+    industry: str
+    location: str
+    targetAudience: str
+    toneOfVoice: str
+
+@app.post("/api/ai/generate-icp")
+async def generate_icp(data: OnboardingData):
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY", "mock_key"))
+    
+    prompt = f"""
+    You are an expert Business Intelligence Agent. Generate a comprehensive Ideal Customer Profile (ICP) JSON based on this data:
+    
+    Business: {data.businessName}
+    Industry: {data.industry}
+    Location: {data.location}
+    Target Audience: {data.targetAudience}
+    Brand Tone: {data.toneOfVoice}
+    
+    Include:
+    1. primary_demographics
+    2. psychographics
+    3. core_pain_points
+    4. best_marketing_platforms
+    
+    Output exactly valid JSON.
+    """
+    
+    if os.getenv("OPENAI_API_KEY"):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "You output JSON only."},
+                    {"role": "user", "content": prompt}
+                ],
+                response_format={"type": "json_object"}
+            )
+            icp_result = json.loads(response.choices[0].message.content)
+            return {"icp": icp_result}
+        except Exception as e:
+            return {"error": str(e)}
+    
+    # Mock fallback if no API key is provided yet
+    return {
+        "icp": {
+            "primary_demographics": f"Users matching: {data.targetAudience}",
+            "psychographics": f"Appreciates a {data.toneOfVoice} tone",
+            "core_pain_points": ["Lack of time", "Need for convenience", "Seeking quality in " + data.industry],
+            "best_marketing_platforms": ["Instagram", "Google Search"]
+        }
+    }
 
 if __name__ == "__main__":
     import uvicorn
