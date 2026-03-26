@@ -1,0 +1,1005 @@
+--- Page 1 ---
+AI Digital Marketing
+Agent Platform
+Full Product Requirements Document · Version
+3.0
+A complete breakdown of every business problem this platform solves, the AI brain logic
+behind each solution, end-to-end workflows, multi-agent architecture, database schema,
+and technology stack.
+Includes: Problem Analysis · Brain Logic · Flow Diagrams · Agent Design · Database Schema ·
+Roadmap
+Status: Draft · Classification: Confidential · Date: 2025
+
+--- Page 2 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 2
+Table of Contents
+0
+1
+Executive Summary
+ 3
+0
+2
+Problem 1 — Businesses Don't Know Where Customers Are
+ 4
+0
+3
+Problem 2 — Businesses Don't Know What to Post
+ 6
+0
+4
+Problem 3 — Businesses Lose Customers Due to Slow Response
+ 9
+0
+5
+Problem 4 — Ad Budget Wasted Without Optimization
+10
+0
+6
+Problem 5 — No Analytics or Feedback Loop
+11
+0
+7
+Complete System Architecture
+12
+0
+8
+Multi-Agent System — 7 AI Agents Explained
+13
+0
+9
+AI Brain — How It Works (RAG + LLM)
+15
+1
+0
+Database Schema
+16
+1
+1
+Feature Requirements (MVP → Scale)
+17
+1
+2
+Technology Stack
+18
+1
+3
+KPIs & Success Metrics
+19
+1
+4
+Roadmap & Milestones
+20
+
+--- Page 3 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 3
+01
+Executive Summary
+The AI Digital Marketing Agent is a fully autonomous platform built to solve the five most painful and
+expensive problems in digital marketing for small and medium businesses — restaurants, gyms, salons,
+clinics, real estate agencies, and more. Instead of hiring a full marketing team, businesses connect once
+and let the AI handle everything: finding customers, creating content, running ads, replying to inquiries,
+and constantly improving based on real performance data.
+ 5
+ Problems Solved
+ 7
+ AI Agents Running
+ 24/7
+ Fully Automated
+ 80%
+ Cost vs Agency
+The 5 Core Problems This Platform Solves
+P
+r
+o
+b
+ l
+e
+m
+ Business Pain
+ AI Solution
+1
+Don't know where customers are online
+AI discovers & optimizes presence on 5 platforms
+2
+Don't know what to post — inactive social media
+AI content engine: posts, reels, ads, captions
+3
+Reply to customers too slowly — lose leads
+24/7 AI Customer Support Agent auto-replies
+4
+Waste ad budget on unoptimized campaigns
+AI Advertising Agent optimizes bids & creatives
+5
+No analytics — strategy never improves
+Analytics Agent + self-learning feedback loop
+
+--- Page 4 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 4
+02
+Problem 1 — Businesses Don't Know
+Where Customers Are
+PROBLEM 1
+Businesses can't find where their
+customers spend time online
+AI SOLUTION
+AI automatically identifies &
+optimizes your presence on every
+Who Has This Problem?
+ Restaurants asking: 'Where do people discover food online?'
+ Gyms asking: 'How do people find fitness services near them?'
+ Salons asking: 'Where do my target customers hang out online?'
+ Clinics asking: 'How do patients find healthcare services?'
+ Any local business with no clear online discovery strategy
+The 5 Customer Discovery Platforms
+Each platform represents a completely different customer behavior and search intent. Your AI must
+understand all five.
+Your Business
+AI Optimizes All Platforms
+Google
+Search
+Google
+Maps
+Instagram
+LinkedIn
+(B2B)
+Delivery
+Apps
+ Figure 1 — Your business connected to all 5 discovery platforms via AI optimization
+ Platform
+ Customer
+ Behavior
+ Example Searches
+ AI Optimization
+
+--- Page 5 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 5
+Google
+Search
+Search intent
+best pizza near me, gym in
+hyderabad
+SEO + Google Business + Reviews
+Google Maps
+Location
+intent
+restaurant near me, cafe near me
+Business profile + Photos + Reviews
+Instagram
+Visual
+discovery
+food reels, fitness videos, travel
+posts
+Posts + Reels + Hashtags + Stories
+LinkedIn
+B2B
+professional
+marketing manager, startup founder,
+investor
+Profile outreach + Company page
+Delivery
+Apps
+Food-specific
+biryani, burger, pizza
+Menu + Photos + Descriptions
+The Core Logic: Customer Intent Flow
+Customer
+Intent
+Platform
+Discovery
+AI
+Optimizes
+Business
+Visible
+Customer
+Converts
+ Figure 2 — Core customer intent to conversion flow
+AI Workflow When a Business Registers
+Business Registers on Platform
+AI Analyzes Business Type & Location
+AI Identifies Relevant Discovery Platforms
+AI Audits Current Presence on Each Platform
+AI Optimizes Profile, Photos, Keywords
+Customers Start Discovering the Business
+ Figure 3 — Platform discovery optimization workflow
+
+--- Page 6 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 6
+03
+Problem 2 — Businesses Don't Know
+What to Post
+PROBLEM 2
+Businesses post randomly or go
+inactive — no content strategy
+AI SOLUTION
+AI Content Engine generates posts,
+reels, ads & captions automatically
+The Real Problem: No Strategy + No Time
+ Owner of a restaurant is too busy cooking to manage Instagram
+ Gym owner doesn't know which content type brings new members
+ Salon posts once, then nothing for 2 weeks — brand looks inactive
+ No system means random promotions with no results tracking
+Bad Posting Pattern (What Most Businesses Do)
+Post today → Nothing for 2 weeks → Random promotion → Nothing again → Repeat
+This pattern destroys brand trust and delivers zero results.
+The AI Brain: 3 Inputs That Power Content Generation
+The content engine doesn't just generate random posts. It uses 3 sources of intelligence to create content
+that attracts the right customers.
+AI Content Brain
+LLM + RAG + Templates
+Business
+Information
+Social Media
+Trends
+Content
+Templates
+Posts &
+Captions
+Reel
+Ideas
+Ad
+Copy
+ Figure 4 — AI Content Brain: 3 inputs combine to produce targeted content outputs
+
+--- Page 7 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 7
+Deep Dive: The 3 Brain Inputs
+ Input
+ What AI Collects
+ Example (Restaurant)
+1. Business
+Information
+Business type, cuisine/service, location, target
+customers, popular products, brand tone
+Type: Italian Restaurant · Dish: Pizza ·
+Location: Hyderabad · Customers: Young
+professionals
+2. Social
+Media
+Trends
+Trending hashtags, viral reel formats,
+competitor content performance, best posting
+times
+Pizza cheese-pull videos get 10x engagement
+· Short reels outperform static posts · Close-up
+food shots attract viewers
+3. Content
+Templates
+Proven content frameworks: dish spotlight,
+behind-the-scenes, testimonial, offer post,
+event
+Dish spotlight template → Margherita Pizza
+post · Behind-the-scenes → Chef preparing
+pizza
+Content Engine Internal Pipeline
+Business Data
+Content Strategy
+Engine
+Post Generator
+Caption Generator
+Scheduler
+& Publisher
+ Figure 5 — Internal content pipeline from raw business data to scheduled published post
+AI Output Examples — What Gets Generated
+ Content
+ Type
+ AI Output Example (Italian Restaurant)
+Platform
+Post
+Dish Spotlight: Margherita Pizza Caption: Fresh out of the oven! Our Margherita
+Pizza is made with authentic Italian ingredients. Visit us in Hyderabad today!
+Instagram
+Facebook
+Reel Idea
+Cheese Pull Slow Motion Scene 1: Chef takes pizza from oven Scene 2: Slice pulled
+with cheese stretch in slow motion Scene 3: Close-up of golden crust
+Instagram
+Reels
+Ad Copy
+Craving authentic Italian pizza? Get 20% off your first order this weekend. Visit us in
+Hyderabad — Table booking available!
+Google
+Ads Meta
+Ads
+Caption
+Fresh. Authentic. Delicious. Our pizza is made with love, every single day. Come
+visit us or order online. Link in bio!
+All
+Platforms
+
+--- Page 8 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 8
+Who Creates What — Post vs Reel Creation Models
+Posts are always generated by AI. Reels have 3 possible creation models depending on platform
+capability.
+Model 1
+Business Records
+AI generates idea+script
+Business records video
+AI writes caption
+AI adds hashtags
+Post on Instagram
+Model 2
+AI Creates Reel
+AI generates images
+AI animates them
+AI adds text + music
+Full AI reel output
+(Best for promotions)
+Model 3
+AI Edits (Best)
+Business uploads raw video
+AI edits automatically
+AI adds subtitles
+AI adds music
+Professional reel output
+ Figure 6 — 3 reel creation models: Business records (MVP), AI creates fully, AI edits hybrid (recommended)
+Full AI Content Workflow
+Business Joins & Completes Onboarding Profile
+AI Analyzes Business + Studies Market Trends
+AI Generates Weekly Content Calendar (7-Day Plan)
+Posts + Reel Ideas + Ad Copy Created by AI
+Business Reviews & Approves in Dashboard
+AI Schedules & Auto-Publishes Approved Content
+AI Tracks Engagement & Updates Future Content Strategy
+ Figure 7 — Complete content generation and publishing workflow
+
+--- Page 9 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 9
+04
+Problem 3 — Businesses Lose
+Customers Due to Slow Response
+PROBLEM 3
+Customers send DMs and don't get a
+reply for hours — they go to a
+AI SOLUTION
+AI Customer Support Agent replies in
+seconds, 24/7, with brand-accurate
+Why This Problem Costs Real Money
+ A potential customer DMs a restaurant at 11pm asking about a table — no reply until morning, they
+book elsewhere
+ A gym enquiry sent on Sunday doesn't get answered until Monday — lead goes cold
+ Speed of response is the #1 factor in lead conversion in service businesses
+ Studies show responding within 5 minutes increases conversion by 400% vs responding after 30
+minutes
+How the Customer Support Agent Works
+Customer Sends DM / Comment / Form Enquiry
+AI Support Agent Detects & Reads Message
+AI Checks Business Knowledge Base (RAG)
+AI Generates Brand-Accurate Response in Seconds
+Response Sent Automatically to Customer
+If Complex: Escalates to Human with Full Context
+Lead Qualified & Added to CRM Automatically
+ Figure 8 — Customer support agent response pipeline
+
+--- Page 10 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 10
+What the AI Knows (From Business Knowledge Base)
+Menu / service list and pricing · Opening hours and location · Booking and reservation process ·
+Current offers and promotions · FAQs (parking, dietary options, payment methods) · Brand tone of
+voice
+05
+Problem 4 — Ad Budget Wasted Without
+Optimization
+PROBLEM 4
+Businesses run ads without any
+optimization — money burns with no
+AI SOLUTION
+AI Advertising Agent continuously
+optimizes bids, audiences, and
+The Ad Optimization Loop
+Launch
+Campaign
+Track
+Performance
+Detect
+Winners
+Pause
+Losers
+Scale
+Winners
+Report
+Results
+ Figure 9 — AI advertising optimization loop running continuously
+What the Advertising Agent Does
+ Action
+ How AI Does It
+ Result for Business
+Campaign
+Setup
+AI configures targeting, placements, creative
+rotation, budget allocation automatically
+Campaign live in minutes, not hours
+Bid
+Optimization
+AI monitors cost-per-click and adjusts bids in
+real time to maximize ROAS
+Same budget buys more clicks
+A/B Testing
+AI creates multiple ad variants, runs them in
+parallel, kills losers automatically
+Best performing ad scales without manual
+effort
+Audience
+Scaling
+AI finds lookalike audiences based on
+converted customers and expands targeting
+Reaches more of the right people
+Budget
+Control
+AI sets daily spend limits and pauses
+campaigns when budget efficiency drops
+Zero overspend, maximum return
+
+--- Page 11 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 11
+06
+Problem 5 — No Analytics or Feedback
+Loop
+PROBLEM 5
+Businesses collect data but never act
+on it — strategy never improves
+AI SOLUTION
+AI Analytics Agent closes the loop:
+every result improves the next
+The Self-Improving Analytics Loop
+Campaign Runs — Data Collected in Real Time
+Analytics Agent Measures ROAS · CTR · Leads · Engagement
+AI Identifies What Worked and What Didn't
+Insights Fed Back to Advertising + Content Agents
+Next Campaign Improved Based on Real Data
+Business Gets Weekly AI-Generated Performance Report
+ Figure 10 — Analytics feedback loop powering continuous self-improvement
+Key Metrics Tracked
+ Metric
+ Definition
+ROAS
+Revenue generated per rupee/dollar of ad spend
+CTR
+Click-through rate on ads and content
+CPL
+Cost per qualified lead acquired
+CAC
+Customer acquisition cost across all channels
+Engagement
+Likes, shares, comments, saves per content piece
+
+--- Page 12 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 12
+Impressions
+Total reach across all platforms
+Conversions
+Bookings, orders, or enquiries generated
+Lead Score
+AI-calculated quality score per discovered lead
+
+--- Page 13 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 13
+07
+Complete System Architecture
+The platform is built on a 6-layer architecture. Each layer has a single responsibility. Data flows upward
+through the layers and results feed back down via the Learning Loop, creating a self-improving system.
+L1
+BUSINESS LAYER
+Business registers · AI builds profile · ICP & brand assets stored
+Learning Loop
+L2
+DISCOVERY LAYER
+Customer Discovery Agent · Google / Instagram / LinkedIn / Maps scanning
+L3
+CONTENT LAYER
+Content Agent · Reel Agent · Posts · Captions · Ad copy · Video scripts
+L4
+AI BRAIN (RAG)
+LLM Reasoning · Vector DB · Business memory · Trend analysis · Decisions
+L5
+EXECUTION LAYER
+Ads Agent · Support Agent · Campaign launch · DM auto-reply · Publishing
+L6
+ANALYTICS LAYER
+Analytics Agent · ROAS · CTR · Leads · Learning loop · Self-improvement
+ Figure 11 — 6-layer AI system architecture with self-improving learning loop (L6 → L2)
+L1 Business Layer
+ Business registration form collects: name, type, location, products, brand assets, target audience
+ Business Intelligence Agent builds the ICP (Ideal Customer Profile)
+ All profile data stored in PostgreSQL as the foundation for all agents
+L2 Discovery Layer
+ Customer Discovery Agent scans Google Search, Google Maps, Instagram, LinkedIn
+ Leads are scored 0–100 based on match with the business ICP
+ Qualified leads stored in CRM with source, contact data, and engagement status
+
+--- Page 14 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 14
+L3 Content Layer
+ Content Generation Agent creates posts, captions, ad copy based on business + trends
+ Reel Generation Agent creates video scripts and edits uploaded videos
+ All content placed in approval queue before auto-publishing
+L4 AI Brain — RAG + LLM
+ Large Language Model (GPT-style) reasons about strategy and directs agents
+ RAG (Retrieval-Augmented Generation) stores business context in vector database
+ This is the intelligence layer — all decisions are made here
+L5 Execution Layer
+ Advertising Agent deploys campaigns on Meta Ads and Google Ads
+ Customer Support Agent auto-replies to DMs and comments
+ Content Scheduler publishes approved posts on the right platform at the right time
+L6 Analytics + Learning
+ Analytics Agent measures all KPIs and generates performance reports
+ Learning Layer processes results and updates the knowledge base (RAG)
+ This is what makes the system smarter with every campaign run
+
+--- Page 15 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 15
+08
+Multi-Agent System — 7 AI Agents
+Explained
+Seven specialized AI agents work in parallel and in coordination, each owning a distinct domain. All are
+orchestrated by the central AI brain which decides which agent to activate for each task.
+AI Orchestrator
+LLM + RAG + Decision Engine
+Routes tasks to the right agent
+Business
+Intelligence
+Customer
+Discovery
+Content
+Generation
+Reel
+Agent
+Advertising
+Agent
+Customer
+Support
+Analytics
+Agent
+ Figure 12 — 7 AI agents connected to central orchestrator (top = discovery/content agents, bottom = execution
+ agents)
+01. Business Intelligence Agent
+Builds the entire strategic foundation for all other agents.
+ Analyzes company data, industry, and competition
+ Builds Ideal Customer Profile (ICP) with demographics and behaviors
+ Produces a structured marketing brief used by all 6 other agents
+ Re-runs monthly or when business profile changes
+ Output feeds into every other agent as their starting context
+
+--- Page 16 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 16
+02. Customer Discovery Agent
+Finds real potential customers across all digital platforms.
+ Scans Google Search, Google Maps, Instagram, LinkedIn continuously
+ Scores each lead 0–100 based on ICP match
+ Identifies decision makers for B2B businesses via LinkedIn
+ Supports geo-filtering, interest-based, and professional filters
+ Stores all qualified leads with source, contact data, and score in CRM
+03. Content Generation Agent
+Creates all text-based marketing content — posts, ads, captions.
+ Generates platform-specific posts in the business tone-of-voice
+ Creates ad copy variants for A/B testing
+ Produces weekly content calendars (7-day plans)
+ Uses business data + trend analysis + proven content templates
+ Output goes to review queue — owner approves before publishing
+04. Reel & Video Generation Agent
+Handles all video and short-form content creation.
+ Generates reel ideas, scripts, and scene-by-scene storyboards
+ Model 1: AI writes script, business records (MVP)
+ Model 2: AI generates full reel from images and text
+ Model 3: Business uploads raw video, AI edits + adds subtitles + music
+ Outputs: Instagram Reels, TikTok, YouTube Shorts formats
+
+--- Page 17 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 17
+05. Advertising Agent
+Runs, manages, and continuously optimizes all paid campaigns.
+ Launches campaigns on Meta Ads and Google Ads automatically
+ Configures targeting, budget, bids, and creative rotation
+ Runs A/B tests and kills underperformers automatically
+ Finds lookalike audiences from converted customers
+ Generates daily spend and performance reports
+06. Customer Support Agent
+Handles all inbound customer communications 24/7.
+ Monitors DMs, comments, and form submissions across platforms
+ Replies within seconds using the business knowledge base
+ Handles FAQs: hours, menu, pricing, booking, location
+ Escalates complex queries to human with full conversation context
+ Qualifies leads in conversation and logs them in the CRM automatically
+07. Analytics Agent
+Measures everything and closes the self-improvement loop.
+ Tracks ROAS, CTR, CPL, CAC, engagement, conversions in real time
+ Identifies best-performing content, audiences, and time windows
+ Generates weekly + monthly executive reports for business owners
+ Feeds insights back to Content and Advertising agents
+ Triggers Learning Layer to update RAG knowledge base with new data
+
+--- Page 18 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 18
+09
+AI Brain — How It Works (RAG + LLM)
+The AI brain is not just one model. It is a combination of a Large Language Model (LLM), a
+Retrieval-Augmented Generation (RAG) system, and a decision engine that routes tasks to the right agent.
+What is the LLM?
+ A Large Language Model (like GPT-4 or Claude) is the core reasoning engine
+ It reads business context, understands goals, and makes strategic decisions
+ It generates content, writes ad copy, crafts support replies, and interprets analytics
+ It acts as the 'brain' that tells all 7 agents what to do
+What is RAG (Retrieval-Augmented Generation)?
+ RAG is a technique where the AI retrieves specific business context before generating output
+ Instead of using only general knowledge, the AI fetches the specific business's: menu, tone of voice,
+past campaigns, customer data, brand guidelines
+ This is stored in a Vector Database (Pinecone or Weaviate) as embeddings
+ Result: AI generates content that is specific to THIS business, not generic
+Example: RAG in Action for a Restaurant
+Without RAG: AI writes 'Great pizza! Come visit us.'
+With RAG: AI writes 'Our wood-fired Margherita Pizza is freshly made every day at our Jubilee Hills
+location. Book a table tonight!'
+RAG pulls: restaurant name, location, signature dish, brand tone → output is specific and authentic.
+AI Decision Engine Flow
+Business
+Request
+RAG Fetches
+Context
+LLM Reasons
+& Decides
+Routes to
+Right Agent
+Agent
+Executes
+Result Stored
+in RAG
+ Figure 13 — AI decision engine: RAG context + LLM reasoning + agent routing
+
+--- Page 19 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 19
+10
+Database Schema
+Primary database: PostgreSQL. Vector database: Pinecone or Weaviate for RAG embeddings. All entities
+below represent the relational schema.
+businesses
+id
+UUID PK
+Unique business ID
+name
+VARCHAR(255)
+Business name
+industry
+VARCHAR(100)
+Restaurant / Gym / Salon etc.
+location
+JSONB
+Address + city + geo-coordinates
+brand_assets
+JSONB
+Logo, tone-of-voice, colour palette
+icp
+JSONB
+Ideal Customer Profile built by BI Agent
+leads
+id
+UUID PK
+Unique lead ID
+business_id
+UUID FK
+Parent business
+platform_source
+VARCHAR(50)
+instagram / google_maps / linkedin
+score
+SMALLINT
+AI fit score 0–100
+status
+VARCHAR(30)
+new / engaged / converted / rejected
+metadata
+JSONB
+Platform-specific profile attributes
+campaigns
+id
+UUID PK
+Campaign ID
+business_id
+UUID FK
+Parent business
+platform
+VARCHAR(50)
+meta / google / linkedin
+budget_total
+NUMERIC(12,2)
+Total allocated budget
+budget_spent
+NUMERIC(12,2)
+Spend to date
+status
+VARCHAR(30)
+draft / active / paused / completed
+
+--- Page 20 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 20
+content
+id
+UUID PK
+Content ID
+type
+VARCHAR(30)
+post / reel / ad_copy / caption
+platform
+VARCHAR(50)
+Target platform
+body
+TEXT
+Generated text content
+media_url
+TEXT
+Image or video asset URL
+status
+VARCHAR(30)
+draft / approved / published
+analytics
+id
+UUID PK
+Record ID
+campaign_id
+UUID FK
+Source campaign
+impressions
+INTEGER
+Total impressions
+clicks
+INTEGER
+Total clicks
+conversions
+INTEGER
+Goal completions
+roas
+NUMERIC(6,2)
+Return on ad spend
+
+--- Page 21 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 21
+11
+Feature Requirements (MVP → Scale)
+Must Have — MVP (Month 1–2)
+FR-01
+Business onboarding form — type, location, products, brand assets
+FR-02
+AI ICP builder and platform discovery analysis
+FR-03
+Customer discovery on Google + Instagram with lead scoring
+FR-04
+Text content generation — posts, captions, ad copy
+FR-05
+Weekly AI content calendar with approval workflow
+FR-06
+Meta Ads campaign launch and basic reporting
+FR-07
+Customer Support Agent — Instagram DM auto-reply
+FR-08
+Analytics dashboard — ROAS, CTR, spend, leads
+Should Have — v1.1 (Month 3–4)
+FR-09
+Reel generation: AI scripts + business records video (Model 1)
+FR-10
+LinkedIn discovery + LinkedIn Ads integration
+FR-11
+Google Ads integration — Search and Display
+FR-12
+A/B test variant generation + auto-winner selection
+FR-13
+AI weekly performance report emailed to business owner
+FR-14
+Multi-business support for agencies
+Nice to Have — v2.0 (Month 5–6)
+FR-15
+Full AI reel generation (Model 2) + AI video editing (Model 3)
+FR-16
+Delivery app optimization (Swiggy, Zomato menu AI)
+FR-17
+Competitor ad spy and market gap analysis
+FR-18
+WhatsApp Business API auto-reply integration
+FR-19
+Predictive budget allocation using historical ROAS
+
+--- Page 22 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 22
+12
+Technology Stack
+ Layer
+Component
+ Technology
+ Why
+Frontend
+Web App
+Next.js 14
+(React)
+SSR, fast dashboards, SEO
+Frontend
+Mobile
+React Native
+iOS + Android owner app
+Backend
+API Server
+Python + FastAPI
+Async, fast, auto OpenAPI docs
+Backend
+Task Queue
+Celery + Redis
+Background agent job execution
+AI / ML
+LLM
+OpenAI GPT-4 /
+Claude
+Reasoning, content, decisions
+AI / ML
+Vector DB
+(RAG)
+Pinecone /
+Weaviate
+Business memory + context
+AI / ML
+Video AI
+RunwayML / Kling
+Reel and video generation
+Data
+Primary DB
+PostgreSQL 16
+All entity storage
+Data
+Cache
+Redis
+Sessions, rate limiting, hot data
+Automatio
+n
+Workflows
+n8n (self-hosted)
+Visual agent coordination
+Infra
+Cloud
+AWS / GCP
+Scalable compute + storage
+Infra
+Containers
+Docker +
+Kubernetes
+Auto-scaling agent workers
+
+--- Page 23 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 23
+13
+KPIs & Success Metrics
+ Metric
+ Definition
+MVP Target
+ 6-Month
+ Target
+Lead Discovery
+Rate
+Qualified leads found per week per business
+50+/week
+200+/week
+Content Output
+AI-generated pieces published per week
+5/week
+20/week
+Campaign ROAS
+Revenue per unit of ad spend
+2.5x
+4.5x
+Support
+Response
+Median reply time for Customer Support Agent
+<2 min
+<30 sec
+Agent Uptime
+% time all 7 agents operational
+99%
+99.9%
+Onboarding Time
+Time from signup to first campaign live
+<30 min
+<10 min
+Retention Rate
+Business subscription renewals at 3 months
+60%
+80%
+
+--- Page 24 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 24
+14
+Roadmap & Milestones
+Phase 1 — MVP | Month 1–2
+ Business onboarding + ICP builder (Business Intelligence Agent)
+ Customer Discovery Agent: Google Search + Instagram scanning + lead scoring
+ Content Generation Agent: posts, captions, ad copy + approval queue
+ Meta Ads Advertising Agent: campaign launch + basic optimization
+ Customer Support Agent: Instagram DM auto-reply with RAG knowledge base
+ Analytics dashboard: spend, leads, ROAS, CTR
+ PostgreSQL schema + n8n automation workflows
+Phase 2 — Growth | Month 3–4
+ Reel Generation Agent: AI scripts + video upload + AI editing (Model 3)
+ LinkedIn integration: B2B discovery + LinkedIn Ads
+ Google Ads integration: Search + Display campaigns
+ A/B testing system with automatic winner detection and scaling
+ Content calendar view with scheduling and multi-platform publishing
+ AI-generated weekly email report for business owners
+ Multi-business (agency) account support
+
+--- Page 25 ---
+AI Digital Marketing Agent Platform
+Full Product Requirements Document v3.0
+Confidential — For Internal Use Only
+Page 25
+Phase 3 — Scale | Month 5–6
+ Full AI reel generation (no business video needed — Model 2)
+ Delivery app optimization: Swiggy / Zomato menu + photo AI
+ WhatsApp Business API auto-reply integration
+ Predictive budget allocation engine using historical ROAS data
+ Self-improving Learning Layer: RAG updates from every campaign result
+ Mobile app (React Native) for business owners to manage on the go
+ Advanced competitor intelligence and market gap analysis
+
