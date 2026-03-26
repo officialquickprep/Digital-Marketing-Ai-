@@ -32,9 +32,11 @@ app.get('/api/health', (req, res) => {
 
 import onboardingRoutes from './routes/onboarding.js';
 import webhookRoutes from './routes/webhooks.js';
+import analyticsRoutes from './routes/analytics.js';
 
 app.use('/api/onboarding', onboardingRoutes);
 app.use('/api/webhooks', webhookRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 app.listen(PORT, () => {
   console.log(`Core Express API running on http://localhost:${PORT}`);
