@@ -34,5 +34,18 @@ class Lead(Base):
     status = Column(String, default="new") # new, contacted, converted, rejected
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
+class Content(Base):
+    __tablename__ = "content"
+
+    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
+    business_id = Column(String, ForeignKey("businesses.id"), nullable=False)
+    
+    type = Column(String) # post, ad_copy, caption
+    platform = Column(String) # meta, linkedin, google
+    body = Column(String)
+    media_url = Column(String)
+    status = Column(String, default="draft") # draft, approved, published
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
 # Create all tables in the engine (This is for MVP, standard migrations via Alembic later)
 Base.metadata.create_all(bind=engine)
