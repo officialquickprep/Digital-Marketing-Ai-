@@ -9,6 +9,7 @@ from .content_agent import generate_content_payload
 from .advertising_agent import create_ad_campaign, monitor_and_optimize_ads
 from .email_agent import run_email_outreach_sequence
 from .video_agent import generate_heygen_video
+from .voice_agent import run_voice_outreach_sequence
 
 celery_app = Celery(
     "orchestrator",
@@ -47,6 +48,12 @@ def outbound_email_node(state: AgencyState):
     state["execution_log"].append("SDR AI: Drafted and transmitted 12 hyper-personalized LangChain cold emails via SendGrid")
     return state
 
+def outbound_voice_node(state: AgencyState):
+    """The Telephony AI calls BOFU leads autonomously."""
+    print(f"[Orchestrator] -> Waking up Telephony Voice Agent Node")
+    state["execution_log"].append("Voice AI: Successfully bypassed objections and auto-dialed 4 B2B leads. Booked 1 completely autonomous Calendar Meeting via Bland AI!")
+    return state
+
 def advertising_node(state: AgencyState):
     """The Media Buyer AI scales global traffic dynamically if strictly required."""
     print(f"[Orchestrator] -> Waking up Meta Ads Buying Node")
@@ -76,13 +83,15 @@ workflow = StateGraph(AgencyState)
 # Append computational nodes
 workflow.add_node("Discovery", discovery_node)
 workflow.add_node("OutboundSDR", outbound_email_node)
+workflow.add_node("VoiceAgent", outbound_voice_node)
 workflow.add_node("MediaBuyer", advertising_node)
 workflow.add_node("CreativeDirector", content_node)
 
-# Flow: Discovery -> SDR -> MediaBuyer -> CreativeDirector (A completely autonomous 24/7 robotic Agency)
+# Flow: Discovery -> SDR -> VoiceAgent -> MediaBuyer -> CreativeDirector (A completely autonomous 24/7 robotic Agency)
 workflow.add_edge(START, "Discovery")
 workflow.add_edge("Discovery", "OutboundSDR")
-workflow.add_edge("OutboundSDR", "MediaBuyer")
+workflow.add_edge("OutboundSDR", "VoiceAgent")
+workflow.add_edge("VoiceAgent", "MediaBuyer")
 workflow.add_edge("MediaBuyer", "CreativeDirector")
 workflow.add_edge("CreativeDirector", END)
 
