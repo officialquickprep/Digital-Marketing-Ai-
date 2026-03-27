@@ -22,10 +22,15 @@ class Lead(Base):
     business_id = Column(String, ForeignKey("businesses.id"), nullable=False)
     
     # Discovery Agent Data
-    source_platform = Column(String) # Google Places, Instagram, etc.
+    source_platform = Column(String) # Google Places, Instagram, LinkedIn
     name_or_username = Column(String)
     raw_bio_or_description = Column(String)
     contact_info = Column(JSON, nullable=True)
+    
+    # B2B Advanced Discovery Data (Phase 2.2)
+    email = Column(String, nullable=True) # Validated via Hunter
+    linkedin_url = Column(String, nullable=True)
+    company_size = Column(String, nullable=True)
     
     # AI Scoring Engine Data
     ai_score = Column(Float, nullable=True) # 0 to 100
