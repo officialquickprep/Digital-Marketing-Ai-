@@ -102,3 +102,70 @@ def launch_automated_ads(business_id: str, business_name: str, location: str, ap
     print(f"[Ads Agent] Successfully drafted 1 Campaign, 1 AdSet, and {len(creative_ids)} Creatives.")
     print("[Ads Agent] Kept in PAUSED state. Dashboard UI requires human-in-the-loop to trigger LIVE mode.")
     return {"success": True, "campaign_id": campaign_id, "adset_id": adset_id, "creatives": creative_ids}
+
+def get_adset_performance(adset_id: str):
+    """Hits Meta Graph API Insights directly to retrieve real-time Spend and Purchase ROAS metrics."""
+    if not META_ACCESS_TOKEN:
+        import random
+        # Mock production response data if Meta Token isn't provided locally
+        return {"spend": round(random.uniform(5.0, 30.0), 2), "roas": round(random.uniform(0.5, 4.0), 2)}
+        
+    url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{adset_id}/insights"
+    params = {
+        "fields": "spend,purchase_roas",
+        "date_preset": "last_7d",
+        "access_token": META_ACCESS_TOKEN
+    }
+    try:
+        response = requests.get(url, params=params)
+        if response.ok and response.json().get('data'):
+            data = response.json()['data'][0]
+            spend = float(data.get('spend', 0))
+            
+            # Extract ROAS from Meta's complex array payload securely
+            roas_list = data.get('purchase_roas', [])
+            roas = float(roas_list[0]['value']) if roas_list else 0.0
+            return {"spend": spend, "roas": roas}
+        return {"spend": 0.0, "roas": 0.0}
+    except Exception as e:
+        print(f"[Ads Agent] Advanced Insights Parsing Error: {e}")
+        return {"spend": 0.0, "roas": 0.0}
+
+def pause_adset(adset_id: str):
+    """Executes a hard-stop POST request to Meta to instantly pause an underperforming Ad Set."""
+    if not META_ACCESS_TOKEN:
+        print(f"[Ads Agent] Auto-Kill System Mock triggered: Graph API paused AdSet {adset_id} securely.")
+        return True
+        
+    url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{adset_id}"
+    payload = {"status": "PAUSED", "access_token": META_ACCESS_TOKEN}
+    try:
+        response = requests.post(url, data=payload)
+        return response.ok
+    except:
+        return False
+
+@celery_app.task
+def monitor_and_optimize_ads(active_adsets: list):
+    """Cron-triggered background sweeper (runs 2x daily) to automatically isolate and kill negative ROAS ad sets."""
+    print(f"[Ads Agent] Initiating Advanced Autonomous ROAS sweep globally across connected accounts...")
+    
+    paused_count = 0
+    for adset_id in active_adsets:
+        metrics = get_adset_performance(adset_id)
+        spend = metrics["spend"]
+        roas = metrics["roas"]
+        
+        print(f"[Ads Agent] Analyzing Live AdSet {adset_id[-5:]} -> Spend: ${spend:.2f} | ROAS: {roas}x")
+        
+        # CRITICAL AUTO-KILL LOGIC THRESHOLDS:
+        # Prevent runaway budgets: If the algorithm has spent > $15 and failed to breach a 2.0x return
+        if spend > 15.00 and roas < 2.0:
+            print(f"   [!!!] ALGORITHMIC AUTO-KILL TRIGGERED for {adset_id}. Severing budget allocation immediately.")
+            success = pause_adset(adset_id)
+            if success:
+                paused_count += 1
+                # db.query(Ad).filter(id=adset_id).update({"status": "paused_by_ai"})
+                
+    print(f"[Ads Agent] Global Sweep Complete. Autonomously neutralized {paused_count} cash-burning Ad Sets.")
+    return {"paused_adsets": paused_count}
